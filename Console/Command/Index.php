@@ -29,15 +29,12 @@ class Index extends Command
     /**
      * Purchase constructor.
      *
-     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
      * @param \Bazaarvoice\Connector\Model\Indexer\Indexer       $indexer
      */
     public function __construct(
-        ScopeConfigInterface $scopeConfig,
         \Bazaarvoice\Connector\Model\Indexer\Indexer $indexer
     ) {
         parent::__construct();
-        $this->scopeConfig = $scopeConfig;
         $this->indexer = $indexer;
     }
 
