@@ -100,6 +100,11 @@ class Eav implements IndexerActionInterface, MviewActionInterface
     private $eavConfig;
 
     /**
+     * @var Image
+     */
+    private $imageHelper;
+
+    /**
      * @param \Bazaarvoice\Connector\Logger\Logger                               $logger
      * @param \Bazaarvoice\Connector\Api\ConfigProviderInterface                 $configProvider
      * @param \Bazaarvoice\Connector\Api\StringFormatterInterface                $stringFormatter
