@@ -105,17 +105,36 @@ class Eav implements IndexerActionInterface, MviewActionInterface
     private $imageHelper;
 
     /**
-     * @param \Bazaarvoice\Connector\Logger\Logger                               $logger
-     * @param \Bazaarvoice\Connector\Api\ConfigProviderInterface                 $configProvider
-     * @param \Bazaarvoice\Connector\Api\StringFormatterInterface                $stringFormatter
-     * @param \Magento\Framework\Indexer\IndexerInterface                        $indexerInterface
-     * @param \Magento\Framework\ObjectManagerInterface                          $objectManager
-     * @param \Magento\Store\Model\StoreManagerInterface                         $storeManager
-     * @param \Bazaarvoice\Connector\Model\ResourceModel\Index\CollectionFactory $collectionFactory
-     * @param \Magento\Framework\App\ResourceConnection                          $resourceConnection
-     * @param \Bazaarvoice\Connector\Api\Data\IndexInterfaceFactory              $bvIndexFactory
-     * @param \Bazaarvoice\Connector\Api\IndexRepositoryInterface                $indexRepository
-     * @param \Magento\Eav\Model\Config                                          $eavConfig
+     * @var AssetRepository
+     */
+    private $assetRepository;
+
+    /**
+     * @var DesignInterface
+     */
+    private $design;
+
+    /**
+     * @var Theme
+     */
+    private $theme;
+
+    /**
+     * @param Logger                   $logger
+     * @param ConfigProviderInterface  $configProvider
+     * @param StringFormatterInterface $stringFormatter
+     * @param IndexerInterface         $indexerInterface
+     * @param ObjectManagerInterface   $objectManager
+     * @param StoreManagerInterface    $storeManager
+     * @param CollectionFactory        $collectionFactory
+     * @param ResourceConnection       $resourceConnection
+     * @param IndexInterfaceFactory    $bvIndexFactory
+     * @param IndexRepositoryInterface $indexRepository
+     * @param Config                   $eavConfig
+     * @param Image                    $imageHelper
+     * @param AssetRepository          $assetRepository
+     * @param DesignInterface          $design
+     * @param Theme                    $theme
      */
     public function __construct(
         Logger $logger,

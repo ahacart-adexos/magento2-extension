@@ -20,6 +20,19 @@ class Base
 {
     private $msg = '';
 
+    private mixed $bv_config;
+
+    /**
+     * @var array|mixed
+     */
+    private mixed $config;
+
+    private string $seo_url;
+
+    private $start_time;
+
+    private float $response_time;
+
     public function __construct($params = array())
     {
 

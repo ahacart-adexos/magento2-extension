@@ -54,6 +54,22 @@ define('DEFAULT_CHARSET', 'UTF-8');
  */
 class BV
 {
+    /**
+     * @var array|mixed
+     */
+    private mixed $config;
+
+    private Reviews $reviews;
+
+    private Questions $questions;
+
+    private Stories $stories;
+
+    private Spotlights $spotlights;
+
+    private SellerRatings $sellerratings;
+
+    private Reviews | Questions | Spotlights | Stories | SellerRatings $SEO;
 
     /**
      * BV Class Constructor

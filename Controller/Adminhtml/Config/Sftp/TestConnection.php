@@ -6,6 +6,7 @@
 
 namespace Bazaarvoice\Connector\Controller\Adminhtml\Config\Sftp;
 
+use Bazaarvoice\Connector\Model\Filesystem\Io\Sftp;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\Controller\Result\JsonFactory;
@@ -22,12 +23,26 @@ use Magento\Store\Model\ScopeInterface;
  */
 class TestConnection extends Action
 {
-   
+    private \Bazaarvoice\Connector\Model\Filesystem\Io\Sftp $sftp;
+
+    private StoreManagerInterface $storeManager;
+
+    private ConfigProviderInterface $configProvider;
+
+    private JsonFactory $resultJsonFactory;
+
+    private StripTags $tagFilter;
+
     /**
      * TestConnection constructor.
      *
-     * @param Context      $context
-     * @param PurchaseFeed $purchaseFeed
+     * @param Context                 $context
+     * @param Sftp                    $sftp
+     * @param ConfigProviderInterface $configProvider
+     * @param StoreInterface          $store
+     * @param StoreManagerInterface   $storeManager
+     * @param JsonFactory             $resultJsonFactory
+     * @param StripTags               $tagFilter
      */
     public function __construct(
         Context $context,
